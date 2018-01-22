@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component , Inject} from '@angular/core';
+import { NinjaChartConfig, WordChartConfig } from './types';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+constructor(@Inject(NinjaChartConfig) public ninjaChart:any,
+            @Inject(WordChartConfig) public wordChart:any){}
 }
